@@ -65488,13 +65488,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _CourseList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CourseList */ "./resources/js/components/CourseList.js");
 /* harmony import */ var _NotFound__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NotFound */ "./resources/js/components/NotFound.js");
-/* harmony import */ var _NivelesList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./NivelesList */ "./resources/js/components/NivelesList.js");
+/* harmony import */ var _Niveles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Niveles */ "./resources/js/components/Niveles.js");
 
 
 
 
 
-
+ // import SingleCourse from './SingleCourse';
+// import NivelesList from './NivelesList';
 
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -65516,9 +65517,9 @@ var Root = function Root() {
     exact: true,
     component: App
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: "/niveles/:id",
+    path: "/nivel/:id",
     exact: true,
-    component: _NivelesList__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _Niveles__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     component: _NotFound__WEBPACK_IMPORTED_MODULE_4__["default"]
   })));
@@ -65560,7 +65561,7 @@ function Course(props) {
   }, props.curso ? props.curso : 'Nombre del curso '), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "card-text"
   }, props.descripcion ? props.descripcion : 'Descripción del curso'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: '/niveles/' + props.id,
+    to: '/nivel/' + props.id,
     className: "btn btn-outline-primary"
   }, "Tomar Curso")));
 }
@@ -65669,80 +65670,20 @@ function Niveles(props) {
   var divStyle = {
     width: '400px'
   };
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card m-2 ",
-    style: divStyle
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-body"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: "card-title"
-  }, props.nivel ? props.nivel : 'Nombre del Nivel '), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "card-text"
-  }, props.descripcion ? props.descripcion : 'Descripción del nivel'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: '/niveles/' + props.id,
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, props.nivel ? props.nivel : 'Nombre del nivel '), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, props.descripcion ? props.descripcion : 'Descripción del nivel'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: '/cursos/niveles/' + props.id,
     className: "btn btn-outline-primary"
-  }, "Tomar nivel")));
-}
-
-/***/ }),
-
-/***/ "./resources/js/components/NivelesList.js":
-/*!************************************************!*\
-  !*** ./resources/js/components/NivelesList.js ***!
-  \************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return NivelesList; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Niveles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Niveles */ "./resources/js/components/Niveles.js");
-/* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Loading */ "./resources/js/components/Loading.js");
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-function NivelesList() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
-      _useState2 = _slicedToArray(_useState, 2),
-      loading = _useState2[0],
-      setLoading = _useState2[1];
-
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
-      _useState4 = _slicedToArray(_useState3, 2),
-      niveles = _useState4[0],
-      setNiveles = _useState4[1];
-
-  var cargarNiveles = function cargarNiveles() {
-    var url = "/api/cursos/".concat(props.match.params.id, "/nivel");
-    axios.get(url).then(function (resp) {
-      setLoading(false);
-      setNiveles(resp.data);
-    })["catch"](function (err) {
-      setLoading(false);
-      console.log('error al cargar los Nivel');
-    });
-  };
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(cargarNiveles, [props.match.params.id]);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "row"
-  }, loading && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Loading__WEBPACK_IMPORTED_MODULE_2__["default"], null), loading == false && niveles.map(function (item) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Niveles__WEBPACK_IMPORTED_MODULE_1__["default"], _extends({}, item, {
-      key: item.id
-    }));
-  }));
+  }, "Ver lecciones")) // <div className="card m-2 " style={divStyle}>
+  //     <div className="card-body">
+  //         <h2 className="card-title">{props.nivel ? props.nivel : 'Nombre del Nivel '}</h2>
+  //         <p className="card-text">{props.descripcion ? props.descripcion : 'Descripción del nivel'}</p>
+  //         {/* <a href="#" className="btn btn-outline-primary">Tomar curso</a> */}
+  //         <Link to={'/niveles/' + props.id} className="btn btn-outline-primary" >
+  //             Tomar nivel
+  //         </Link>
+  //     </div>
+  // </div>
+  ;
 }
 
 /***/ }),

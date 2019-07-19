@@ -3,8 +3,10 @@ import ReactDom from 'react-dom';
 import { HashRouter, Route, Switch } from "react-router-dom";
 import CourseList from './CourseList';
 import NotFound from './NotFound';
-
 import NivelesList from './NivelesList';
+import SingleCourse from './SingleCourse';
+
+// import NivelesList from './NivelesList';
 
 
 
@@ -29,8 +31,8 @@ const Root = () => (
     <HashRouter>
         <Switch>
             <Route path="/" exact component={App}/>
-            {/* <Route path="/cursos/:id" exact component={SingleCourse}/> */}
-            <Route path="/niveles/:id" exact component={NivelesList} />
+            <Route path="/cursos/:id" exact component={SingleCourse}/>
+            <Route path="/nivel/:id" exact component={NivelesList} />
             <Route component={NotFound}/>
         </Switch>
     </HashRouter>

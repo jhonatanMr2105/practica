@@ -5,7 +5,7 @@ import Loading from './Loading'
 
 
 
-export default function NivelesList() {
+export default function NivelesList(props) {
 
     const [loading, setLoading] = useState(true);
 
@@ -28,16 +28,35 @@ export default function NivelesList() {
     useEffect(cargarNiveles, [props.match.params.id])
 
     return (
+        <div className="container">
+            <h1 className="display-5 text-center">Lista de Niveles</h1>
 
-        <section className="row">
-            {
-                loading && <Loading />
-            }
+            <div className="row">
 
-            {
-                loading == false && niveles.map(item => <Niveles {...item} key={item.id} />)
-            }
-        </section>
+                <div className="col-md-12">
+                    <table className="table table-sm table-hover table-bordered">
+                        <thead className="thead-dark">
+                            <tr className="text-center">
+                                <th>Nivel</th>
+                                <th>Descripcion</th>
+                                <th>cursos</th>
 
+
+                            </tr>
+                        </thead>
+                        <tbody class="table-light">
+                            {
+                                loading && <Loading />
+                            }
+
+                            {
+                                loading == false && niveles.map(item => <Niveles {...item} key={item.id} />)
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     )
 }
