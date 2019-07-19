@@ -32,9 +32,10 @@ const SingleCourse = (props) => {
     return (
 
         <div className="container nt-5">
-            <div className="row">
+            <div className="row ">
                 <div className="col-sm-12">
                     <div className="card">
+
                         {/* <img
                             src={cursos.imagen ? curso.imagen : 'imgs/148957.jpg'}
                             className="card-img-top" alt="curso de miskito"
@@ -51,9 +52,10 @@ const SingleCourse = (props) => {
                 </div>
             </div>
 
-            <div className="container nt-3">
-                <div className="col-sm-12">
-                    <div className="card">
+            <div className="container nt-5">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2 className="card-title">
 
                         {/* <div className="card-header"> detalles del curso</div>
                         <div className="card-body"> */}
@@ -61,23 +63,29 @@ const SingleCourse = (props) => {
                          como no tengo reacionado las tablas desarrollador esta linea de codigo no la ocupare */}
 
                         Desarrollado por Jhonatan M
-
-                        </div>
-                </div>
-            </div>
-
-                        Niveles
-                               {
-                            cursos.niveles.map(niveles => {
-                                return (
-                                    <h2 key={niveles.id}>{niveles.nivel}</h2>
-                                )
-                            })
-                        }
+                        </h2>
                     </div>
                 </div>
-            </div>
+
+
+
+            <div className="row">
+                <div class="col-sm-4">
+
+
+                Niveles
+                               {
+                    cursos.niveles.map(niveles => {
+                        return (
+                            <h2 key={niveles.id}>{niveles.nivel}</h2>
+                        )
+                    })
+                }
+                    </div>
+                </div>
         </div>
+</div>
+
 
     )
 

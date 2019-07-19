@@ -14,8 +14,8 @@ export default function Niveles(props) {
 
             <th >{props.nivel ? props.nivel : 'Nombre del nivel '}</th>
             <th >{props.descripcion ? props.descripcion : 'Descripción del nivel'}</th>
-            <Link to={'/cursos/niveles/' + props.id} className="btn btn-outline-primary" >
-                Ver lecciones
+            <Link to={'/cursos/niveles/' + props.id}  >
+                Ver lecciones del nivel
                </Link>
         </tr>
 

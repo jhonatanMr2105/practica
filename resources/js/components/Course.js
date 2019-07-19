@@ -9,10 +9,11 @@ export default function Course(props) {
     }
 
     return (
-        <div className="card m-2 " style={divStyle}>
+        <div className="card m-2 " >
+            <div className="col-mb-12-">
 
             <div className="card-body">
-                <h2 className="card-title">{props.curso ? props.curso : 'Nombre del curso '}</h2>
+                <h2 className="card-title-center">{props.curso ? props.curso : 'Nombre del curso '}</h2>
                 <p className="card-text">{props.descripcion ? props.descripcion : 'Descripción del curso'}</p>
                 {/* <a href="#" className="btn btn-outline-primary">Tomar curso</a> */}
 
@@ -20,7 +21,7 @@ export default function Course(props) {
                     Tomar Curso
                 </Link>
 
-
+                </div>
             </div>
         </div>
     )

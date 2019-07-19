@@ -35,7 +35,7 @@ export default function NivelesList(props) {
 
                 <div className="col-md-12">
                     <table className="table table-sm table-hover table-bordered">
-                        <thead className="thead-dark">
+                        <thead className="thead-light">
                             <tr className="text-center">
                                 <th>Nivel</th>
                                 <th>Descripcion</th>
@@ -43,7 +43,7 @@ export default function NivelesList(props) {
 
                             </tr>
                         </thead>
-                        <tbody class="table-light">
+                        <tbody class="table-light-striped">
                             {
                                 loading && <Loading />
                             }
