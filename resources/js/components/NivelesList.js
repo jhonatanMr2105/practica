@@ -41,7 +41,6 @@ export default function NivelesList(props) {
                                 <th>Descripcion</th>
                                 <th>cursos</th>
 
-
                             </tr>
                         </thead>
                         <tbody class="table-light">

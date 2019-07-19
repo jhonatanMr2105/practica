@@ -66,9 +66,6 @@ const SingleCourse = (props) => {
                 </div>
             </div>
 
-            <div className="container nt-3">
-                <div className="col-sm-12">
-                    <div className="card">
                         Niveles
                                {
                             cursos.niveles.map(niveles => {
